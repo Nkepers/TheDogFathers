@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(165, 165, 165);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body h1 img {
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+    border: solid 5px black;
+    padding: 5px;
+}
+
