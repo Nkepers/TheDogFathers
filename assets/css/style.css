@@ -1,6 +1,6 @@
 * {
-    margin: auto;
-    padding: auto;
+    margin: 5px;
+    padding: 5px;
     box-sizing: border-box;
 }
 
@@ -12,7 +12,7 @@ body {
 .title {
     text-align: center;
     font-size: 50px;
-    border: solid 5px black;
+    border-bottom: solid 5px black;
     padding: 5px;
 }
 
@@ -25,16 +25,16 @@ body {
     text-align: center;
     margin: 0 auto;
     width: 500px;
-  }
-  
-  #breed_data {
+}
+
+#breed_data {
     text-align: left;
     transition: all 0.2s;
     margin: 0 auto;
     width: 500px;
-  }
-  
-  #breed_image {
+}
+
+#breed_image {
     margin: 0 auto;
     width: 460px;
-  }
+}

@@ -1,4 +1,6 @@
 var dogsApi = 'https://api.thedogapi.com/v1/breeds';
+var rescueApi = 'https://api.rescuegroups.org/v5';
+var findYourPet = new petfinder.Client({apiKey: "my-api-key", secret: "my-api-secret"});
 
 function getDogsApi() {
     fetch(dogsApi, {
@@ -89,3 +91,13 @@ function ajax_get(url, callback) {
 }
 // call the getBreeds function which will load all the Dog breeds into the select control
 getBreeds();
+
+
+//Find your pet section
+findYourPet.animal.search()
+    .then(function (response) {
+        // Do something with `response.data.animals`
+    })
+    .catch(function (error) {
+        // Handle the error
+    });
