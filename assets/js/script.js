@@ -1,6 +1,6 @@
 var dogsApi = 'https://api.thedogapi.com/v1/breeds';
-var rescueApi = 'https://api.rescuegroups.org/v5';
-var findYourPet = new petfinder.Client({apiKey: "my-api-key", secret: "my-api-secret"});
+var findYourPet = new petfinder.Client({ apiKey: "kj4lrb83WGM3w4ST4wljxWBjnfZy9hrXSGrcWlmbvSfxcdue0Y", secret: "HqQk8xetIsYSaFtXSPQvBbzoxDA7J2IWOCB2tzEo" });
+var selectedBreed = document.getElementById('userInput').value;
 
 function getDogsApi() {
     fetch(dogsApi, {
@@ -94,10 +94,23 @@ getBreeds();
 
 
 //Find your pet section
-findYourPet.animal.search()
+document.getElementById('btn').addEventListener('click', function(){
+    console.log(selectedBreed)
+    //Find your pet section
+findYourPet.animal.search({
+    type: "Dog",
+    breed: selectedBreed,
+    page: 1,
+    limit: 100,
+})
     .then(function (response) {
+        console.log(response.data.animals)
         // Do something with `response.data.animals`
+        var searchResult = document.createElement('div');
+        searchResult.textContent = response.data.animals[0].name;
+        document.getElementById('display').append(searchResult);
     })
     .catch(function (error) {
         // Handle the error
     });
+});

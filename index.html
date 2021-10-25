@@ -18,6 +18,7 @@
 <body>
   <h1 class="title">The Dog Fathers</h1>
 
+  <!-- This is where you can select a breed to learn facts about them -->
   <div class="columns">
     <div class="column">
       <div id="banner-message" id="breed_data">
@@ -37,6 +38,15 @@
       </div>
     </div>
   </div>
+
+  <!-- This is where you search for a shelter to adopt from -->
+  <section>
+    <input id="userInput" type="text" placeholder="">
+    <button id="btn">Submit</button>
+
+    <div id="display"></div>
+  </section>
+
   <section>
     <p class="content is-large">
       Do you like dogs? Love them? Take a look at dogs that are available for adoption!
@@ -44,6 +54,8 @@
     </p>
   </section>
 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
 
   <script src="./assets/js/script.js"></script>
 </body>
