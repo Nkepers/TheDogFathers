@@ -22,7 +22,7 @@
   <!-- This is where you can select a breed to learn facts about them -->
   <div class="columns is-mobile">
 
-    
+
     <div class="column is-three-quarters">
       <article class="">
         <div id="banner-message" id="breed_data">
@@ -44,33 +44,51 @@
     </div>
 
     <!-- This is where you search for a shelter to adopt from -->
-    <div class="column">
+    <div class="columnis-three-quarters">
 
-      <section id="shelterSearch" class="is-flex-wrap-wrap">
-        <h2 class="is-size-6">Found your new bestie? Click here to search shelters and rescue groups!</h2>
-
-        <input id="userInput" type="text" placeholder="">
-        <button id="btn">Search</button>
-
-        <button id="saveBtn">Save</button>
-
-        <div class="card">
-          <div class="card-body row justify-content-between">
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-            <div id="display" class="col-sm-2 text-center content card"></div>
-          </div>
+      <nav id="shelterSearch" class="panel is-flex-wrap-wrap">
+        <p class="panel-heading">
+          Find Your Bestie
+        </p>
+        <div class="panel-block">
+          <p class="control has-icons-left">
+            <input id="userInput" class="input" type="text" placeholder="Search">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
         </div>
-      </section>
+        <p class="panel-tabs">
+          <a id="btn">Search</a>
+          <a id="saveBtn" class="">Save</a>
+          <a></a>
+          <a></a>
+          <a></a>
+        </p>
+        <div id="display">
+        <a  class="panel-block is-active">
+          
+        </a>
+        <a  class="panel-block">
+
+        </a>
+        <a class="panel-block">
+
+        </a>
+        <a  class="panel-block">
+
+        </a>
+        <a  class="panel-block">
+
+        </a>
+        <a  class="panel-block">
+
+        </a>
+        </div>
+      </nav>
+
+
     </div>
-    <div class="column"></div>
   </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
