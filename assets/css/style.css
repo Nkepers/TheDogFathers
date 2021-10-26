@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: rgb(165, 165, 165);
     font-family: Helvetica, Arial, sans-serif;
@@ -37,4 +41,12 @@ body {
 #breed_image {
     margin: 0 auto;
     width: 460px;
+}
+
+#btn:hover {
+    cursor: pointer;
+}
+
+.card {
+    background-color: rgb(43, 235, 219);
 }

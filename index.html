@@ -21,37 +21,49 @@
   <!-- This is where you can select a breed to learn facts about them -->
   <div class="columns">
     <div class="column">
-      <div id="banner-message" id="breed_data">
-        <p>Select a Breed</p>
+      <article class="is-flex-wrap-wrap">
+        <div id="banner-message" id="breed_data">
+          <p>Select a Breed</p>
 
-        <select class="breed_select">
-          <option></option>
-        </select>
+          <select class="breed_select">
+            <option></option>
+          </select>
 
-        <img id="breed_image" src="" />
-        <p>
-          Breed Data
-        </p>
-        <table id="breed_data_table">
+          <img id="breed_image" src="" />
+          <p>
+            Breed Data
+          </p>
+          <table id="breed_data_table">
 
-        </table>
-      </div>
+          </table>
+        </div>
+      </article>
     </div>
   </div>
 
   <!-- This is where you search for a shelter to adopt from -->
-  <section>
+  <section id="shelterSearch" class="is-flex-wrap-wrap">
+    <h2 class="is-size-3">Found your new bestie? Click here to search shelters and rescue groups!</h2>
+
     <input id="userInput" type="text" placeholder="">
-    <button id="btn">Submit</button>
+    <button id="btn">Search</button>
 
-    <div id="display"></div>
-  </section>
+    <button id="saveBtn">Save</button>
 
-  <section>
-    <p class="content is-large">
-      Do you like dogs? Love them? Take a look at dogs that are available for adoption!
-      Here at DogFathers we make it easier for you to find your forever friend!
-    </p>
+    <div class="card">
+      <div class="card-body row justify-content-between">
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+        <div id="display" class="col-sm-2 text-center content card"></div>
+      </div>
+    </div>
   </section>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
