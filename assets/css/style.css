@@ -20,6 +20,11 @@ body {
     padding: 5px;
 }
 
+.dogPic {
+    width: 300px;
+    height: 300px;
+}
+
 #banner-message {
     background: white;
     border: solid 3px black;

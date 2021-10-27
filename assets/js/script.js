@@ -117,14 +117,10 @@ document.getElementById('btn').addEventListener('click', function () {
 
             for (i = 0; i < response.data.animals.length; i++) {
                 var searchResult = document.createElement('div');
-                var nameResult = document.createElement('p');
                 var urlResult = document.createElement('a');
                 var picResult = document.createElement('img');
                 var statusResult = document.createElement('p')
 
-                // This displays the names of the searched doggos
-                nameResult.textContent = response.data.animals[i].name;
-                searchResult.appendChild(nameResult);
 
                 // This is the links to go to petfinder.com if interested in a specific doggo
                 urlResult.setAttribute('href', response.data.animals[i].url);
@@ -137,10 +133,10 @@ document.getElementById('btn').addEventListener('click', function () {
 
                 // This displays a picture of the doggos
                 if (response.data.animals[i].primary_photo_cropped) {
-                    picResult.setAttribute('src', response.data.animals[i].primary_photo_cropped.medium);
+                    picResult.setAttribute('src', response.data.animals[i].primary_photo_cropped.small);
+                    picResult.classList.add('dogPic')
                     searchResult.appendChild(picResult);
                 }
-
 
                 document.getElementById('display').append(searchResult);
             }
