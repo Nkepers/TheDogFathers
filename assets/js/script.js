@@ -13,7 +13,7 @@ function getDogsApi() {
         .then(function (data) {
             console.log(data)
         });
-}
+};
 
 // Setup the Controls
 var $breed_select = $('select.breed_select');
@@ -26,7 +26,8 @@ function getBreeds() {
     ajax_get('https://api.thedogapi.com/v1/breeds', function (data) {
         populateBreedsSelect(data)
     });
-}
+};
+
 // Put the breeds in the Select control
 function populateBreedsSelect(breeds) {
     $breed_select.empty().append(function () {
@@ -36,7 +37,8 @@ function populateBreedsSelect(breeds) {
         });
         return output;
     });
-}
+};
+
 // triggered when the breed select control changes
 function getDogByBreed(breed_id) {
     // search for images that contain the breed (breed_id=) and attach the breed object (include_breed=1)
@@ -51,7 +53,8 @@ function getDogByBreed(breed_id) {
             displayBreed(data[0])
         }
     });
-}
+};
+
 // clear the image and table
 function clearBreed() {
     $('#breed_image').attr('src', "");
@@ -69,7 +72,7 @@ function displayBreed(image) {
         // add a row to the table
         $("#breed_data_table").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
     });
-}
+};
 
 // make an Ajax request
 function ajax_get(url, callback) {
@@ -146,8 +149,9 @@ document.getElementById('bestie-form').addEventListener('submit', function (even
         })
 });
 
-document.getElementById('saveBtn').addEventListener('click', function () {
-
+document.getElementById('saveBtn').addEventListener('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
     if (selectedBreed === '') {
         //If this statement is left blank, no text will be saved to local storage.
     }
@@ -155,4 +159,4 @@ document.getElementById('saveBtn').addEventListener('click', function () {
         pastSearch.push(selectedBreed)
         localStorage.setItem('pastSearch', JSON.stringify(pastSearch))
     }
-})
+});
