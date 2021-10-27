@@ -28,7 +28,7 @@ body {
     font-size: 20px;
     text-align: center;
     margin: 0 auto;
-    width: 500px;
+    width: auto;
 }
 
 #breed_data {
@@ -45,8 +45,4 @@ body {
 
 #btn:hover {
     cursor: pointer;
-}
-
-.card {
-    background-color: rgb(43, 235, 219);
 }
