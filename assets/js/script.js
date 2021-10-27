@@ -95,7 +95,8 @@ getBreeds();
 
 
 //Find your pet section
-document.getElementById('btn').addEventListener('click', function () {
+document.getElementById('bestie-form').addEventListener('submit', function (event) {
+    event.preventDefault();
     selectedBreed = document.getElementById('userInput').value;
 
     //Find your pet section
@@ -117,6 +118,7 @@ document.getElementById('btn').addEventListener('click', function () {
 
             for (i = 0; i < response.data.animals.length; i++) {
                 var searchResult = document.createElement('div');
+                searchResult.classList.add('card');
                 var urlResult = document.createElement('a');
                 var picResult = document.createElement('img');
                 var statusResult = document.createElement('p')
@@ -124,6 +126,7 @@ document.getElementById('btn').addEventListener('click', function () {
 
                 // This is the links to go to petfinder.com if interested in a specific doggo
                 urlResult.setAttribute('href', response.data.animals[i].url);
+                urlResult.setAttribute('target', '_blank');
                 urlResult.textContent = response.data.animals[i].name;
                 searchResult.appendChild(urlResult);
 
