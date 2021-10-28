@@ -20,41 +20,82 @@
   <h1 class="title">The Dog Fathers</h1>
 
   <!-- This is where you can select a breed to learn facts about them -->
-  <div class="columns">
+  <div class="columns is-flex-shrink-2">
+
+    <div class="column is-2"></div>
+
+    <div class="column is-one-third">
+      <article class="">
+        <div id="banner-message" id="breed_data">
+          <h1 class="title is-4">Select a Breed</h1>
+
+          <div class="control">
+            <div class="select">
+              <select class="breed_select">
+                <option></option>
+              </select>
+            </div>
+          </div>
+
+          <img id="breed_image" src="" />
+          <p>
+            Breed Data
+          </p>
+          <div class="table-container is-flex-shrink-2">
+
+            <table class="table content is-fullwidth" id="breed_data_table">
+
+            </table>
+          </div>
+        </div>
+      </article>
+    </div>
+
     <div class="column">
-      <div id="banner-message" id="breed_data">
-        <p>Select a Breed</p>
+      <div class="container">
+        <div class="notification">
+          <p class="is-size-4">We at The Dog Father want to help find the right dog for you! Look through the different
+            dog breeds to find
+            out what kind of dog you want then use the Find Your Bestie tab to find your new forever friend</p>
+        </div>
 
-        <select class="breed_select">
-          <option></option>
-        </select>
-
-        <img id="breed_image" src="" />
-        <p>
-          Breed Data
-        </p>
-        <table id="breed_data_table">
-
-        </table>
       </div>
     </div>
-    <div class="column"></div>
+
   </div>
-
   <!-- This is where you search for a shelter to adopt from -->
-  <section>
-    <input id="userInput" type="text" placeholder="">
-    <button id="btn">Submit</button>
+  <section class="columns">
 
-    <div id="display"></div>
+    <div class="column"></div>
+
+    <div class="column is-four-fifths">
+
+      <nav id="shelterSearch" class="panel is-flex-shrink-2">
+        <form id="bestie-form">
+          <p class="panel-heading has-text-centered">
+            Find Your Bestie
+          </p>
+          <div class="panel-block">
+            <p class="control has-icons-left">
+              <input id="userInput" class="input" type="text" placeholder="Search">
+              <span class="icon is-left">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </span>
+            </p>
+          </div>
+          <p class="panel-tabs">
+            <button id="btn" type="submit">Search</button>
+            <button id="saveBtn" class="">Save</button>
+          </p>
+        </form>
+        <div id="display"></div>
+      </nav>
+    </div>
+    <div class="column"></div>
+
   </section>
 
-  <section>
-    <p class="content is-large">
-      Do you like dogs? Love them? Take a look at dogs that are available for adoption!
-      Here at DogFathers we make it easier for you to find your forever friend!
-    </p>
-  </section>
+
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
@@ -65,7 +106,10 @@
 <footer class="footer has-background-grey">
   <div class="content has-text-centered">
     <p>
-      <strong>The Dog Fathers</strong> by Christian Rodriguez,Nicholas Keper, and Ismael Espana <a href="">
+
+  <strong>The Dog Fathers</strong> by Christian Rodriguez,Nicholas Kepers, and Ismael Espana <a href="">
+
+
     </p>
   </div>
 </footer>

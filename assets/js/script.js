@@ -1,6 +1,7 @@
 var dogsApi = 'https://api.thedogapi.com/v1/breeds';
 var findYourPet = new petfinder.Client({ apiKey: "kj4lrb83WGM3w4ST4wljxWBjnfZy9hrXSGrcWlmbvSfxcdue0Y", secret: "HqQk8xetIsYSaFtXSPQvBbzoxDA7J2IWOCB2tzEo" });
-var selectedBreed = document.getElementById('userInput').value;
+var pastSearch = [];
+var selectedBreed = '';
 
 function getDogsApi() {
     fetch(dogsApi, {
@@ -75,7 +76,7 @@ function ajax_get(url, callback) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log('responseText:' + xmlhttp.responseText);
+            // console.log('responseText:' + xmlhttp.responseText);
             try {
                 var data = JSON.parse(xmlhttp.responseText);
             } catch (err) {
@@ -94,23 +95,64 @@ getBreeds();
 
 
 //Find your pet section
-document.getElementById('btn').addEventListener('click', function(){
-    console.log(selectedBreed)
+document.getElementById('bestie-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    selectedBreed = document.getElementById('userInput').value;
+
     //Find your pet section
-findYourPet.animal.search({
-    type: "Dog",
-    breed: selectedBreed,
-    page: 1,
-    limit: 100,
-})
-    .then(function (response) {
-        console.log(response.data.animals)
-        // Do something with `response.data.animals`
-        var searchResult = document.createElement('div');
-        searchResult.textContent = response.data.animals[0].name;
-        document.getElementById('display').append(searchResult);
+    findYourPet.animal.search({
+        type: "Dog",
+        breed: selectedBreed,
+        page: 1,
+        limit: 10,
     })
-    .catch(function (error) {
-        // Handle the error
-    });
+        .then(function (response) {
+            console.log(response.data.animals)
+            console.log(selectedBreed)
+            // Do something with `response.data.animals`
+            // Deletes past search and displays new search
+            document.getElementById('display').remove()
+            var shelterSearch = document.createElement('div')
+            shelterSearch.setAttribute('id', 'display')
+            document.getElementById('shelterSearch').append(shelterSearch)
+
+            for (i = 0; i < response.data.animals.length; i++) {
+                var searchResult = document.createElement('div');
+                searchResult.classList.add('card');
+                var urlResult = document.createElement('a');
+                var picResult = document.createElement('img');
+                var statusResult = document.createElement('p')
+
+
+                // This is the links to go to petfinder.com if interested in a specific doggo
+                urlResult.setAttribute('href', response.data.animals[i].url);
+                urlResult.setAttribute('target', '_blank');
+                urlResult.textContent = response.data.animals[i].name;
+                searchResult.appendChild(urlResult);
+
+                // This displays the adoption status of the doggos (whether its available or not)
+                statusResult.textContent = response.data.animals[i].status;
+                searchResult.appendChild(statusResult);
+
+                // This displays a picture of the doggos
+                if (response.data.animals[i].primary_photo_cropped) {
+                    picResult.setAttribute('src', response.data.animals[i].primary_photo_cropped.small);
+                    picResult.classList.add('dogPic')
+                    searchResult.appendChild(picResult);
+                }
+
+                document.getElementById('display').append(searchResult);
+            }
+        })
 });
+
+document.getElementById('saveBtn').addEventListener('click', function () {
+
+    if (selectedBreed === '') {
+        //If this statement is left blank, no text will be saved to local storage.
+    }
+    else {
+        pastSearch.push(selectedBreed)
+        localStorage.setItem('pastSearch', JSON.stringify(pastSearch))
+    }
+})
