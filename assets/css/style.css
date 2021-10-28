@@ -67,6 +67,12 @@ body {
     flex-wrap: wrap;
 }
 
+.breed_select:hover {
+    cursor: pointer;
+    border-color: #275294fd;
+    box-shadow: 0px 0px 20px #4221bb;
+}
+
 /* #footer {
     position:absolute;
     bottom: 0;
