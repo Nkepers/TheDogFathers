@@ -18,38 +18,61 @@
 
 <body>
   <h1 class="title">The Dog Fathers</h1>
-  
-  <!-- This is where you can select a breed to learn facts about them -->
-  <div class="columns is-mobile">
-    
-    <div class="column is-one-quarter"></div>
 
-    <div class="column is-one-quarter">
+  <!-- This is where you can select a breed to learn facts about them -->
+  <div class="columns is-flex-shrink-2">
+
+    <div class="column is-2"></div>
+
+    <div class="column is-one-third">
       <article class="">
         <div id="banner-message" id="breed_data">
-          <p>Select a Breed</p>
+          <h1 class="title is-4">Select a Breed</h1>
 
-          <select class="breed_select">
-            <option></option>
-          </select>
+          <div class="control">
+            <div class="select">
+              <select class="breed_select">
+                <option></option>
+              </select>
+            </div>
+          </div>
 
           <img id="breed_image" src="" />
           <p>
             Breed Data
           </p>
-          <table id="breed_data_table">
+          <div class="table-container is-flex-shrink-2">
 
-          </table>
+            <table class="table content is-fullwidth" id="breed_data_table">
+
+            </table>
+          </div>
         </div>
       </article>
     </div>
 
-    <!-- This is where you search for a shelter to adopt from -->
-    <div class="column is-one-third">
+    <div class="column">
+      <div class="container">
+        <div class="notification">
+          <p class="is-size-4">We at The Dog Father want to help find the right dog for you! Look through the different
+            dog breeds to find
+            out what kind of dog you want then use the Find Your Bestie tab to find your new forever friend</p>
+        </div>
 
-      <nav id="shelterSearch" class="panel is-flex-wrap-wrap">
+      </div>
+    </div>
+
+  </div>
+  <!-- This is where you search for a shelter to adopt from -->
+  <section class="columns">
+
+    <div class="column"></div>
+
+    <div class="column is-four-fifths">
+
+      <nav id="shelterSearch" class="panel is-flex-shrink-2">
         <form id="bestie-form">
-          <p class="panel-heading">
+          <p class="panel-heading has-text-centered">
             Find Your Bestie
           </p>
           <div class="panel-block">
@@ -68,7 +91,15 @@
         <div id="display"></div>
       </nav>
     </div>
+<<<<<<< HEAD
   </div>
+=======
+    <div class="column"></div>
+
+  </section>
+
+
+>>>>>>> 7793f750e5475b69a75920c3bb1a9ffab714a6f2
 
   <footer id="footer" class="footer has-background-grey">
     <div class="content has-text-centered">
@@ -83,6 +114,19 @@
   <script src="./assets/js/script.js"></script>
 </body>
 
+<<<<<<< HEAD
 
+=======
+<footer class="footer has-background-grey">
+  <div class="content has-text-centered">
+    <p>
+
+  <strong>The Dog Fathers</strong> by Christian Rodriguez,Nicholas Kepers, and Ismael Espana <a href="">
+
+
+    </p>
+  </div>
+</footer>
+>>>>>>> 7793f750e5475b69a75920c3bb1a9ffab714a6f2
 
 </html>
