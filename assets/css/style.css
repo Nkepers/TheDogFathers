@@ -52,6 +52,12 @@ body {
     cursor: pointer;
 }
 
+#display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 /* #footer {
     position:absolute;
     bottom: 0;
