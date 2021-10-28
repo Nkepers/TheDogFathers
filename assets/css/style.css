@@ -9,6 +9,7 @@ html, body {
 }
 
 body {
+    background: url(./cool-doberman.png) no-repeat center center fixed;
     background-color: rgb(165, 165, 165);
     font-family: Helvetica, Arial, sans-serif;
 }
